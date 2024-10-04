@@ -1,5 +1,5 @@
 {
     "require": {
-        "symfony/flex": "^1.0" 
+        "symfony/flex": "^2.0" 
     }
 }
