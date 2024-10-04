@@ -18,7 +18,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Exécuter PHPUnit à partir du bon chemin
-                sh 'vendor/bin/phpunit'
+                sh 'vendor/bin/phpunit tests'
             }
         }
     }
