@@ -8,6 +8,7 @@ pipeline {
  }
  stage('Install dependencies') {
  steps {
+ composer config --no-plugins allow-plugins.symfony/flex true
  sh 'composer install'
  }
  }
