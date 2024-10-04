@@ -8,8 +8,12 @@ pipeline {
         }
         stage('Install Composer') {
             steps {
-                sh 'curl -sS https://getcomposer.org/installer | php'
-                sh 'mv composer.phar /usr/local/bin/composer'
+                sh '''
+                    curl -sS https://getcomposer.org/installer | php
+                    mkdir -p /var/lib/jenkins/bin
+                    mv composer.phar /var/lib/jenkins/bin/composer
+                    export PATH=$PATH:/var/lib/jenkins/bin
+                '''
             }
         }
         stage('Install dependencies') {
@@ -29,4 +33,3 @@ pipeline {
         }
     }
 }
-
