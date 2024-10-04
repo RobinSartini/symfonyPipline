@@ -6,6 +6,16 @@ pipeline {
  git branch: 'main', url: 'https://github.com/RobinSartini/symfonyPipline.git'
  }
  }
+ stage('Install dependencies') {
+ steps {
+ sh 'composer install'
+ }
+ }
+ stage('Run Tests') {
+ steps {
+ sh './bin/phpunit'
+ }
+ }
  }
  post {
  success {
