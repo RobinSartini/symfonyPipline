@@ -36,6 +36,9 @@
         "test": "php bin/phpunit"
     },
     "config": {
+    "allow-plugins": {
+        "symfony/flex": true
+    }
         "preferred-install": "dist",
         "sort-packages": true
     },
