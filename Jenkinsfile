@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git 'https://github.com/RobinSartini/symfonyPipline.git'
+                git branch: 'main', url: 'https://github.com/RobinSartini/symfonyPipline.git'
             }
         }
         stage('Install Composer') {
